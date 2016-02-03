@@ -5,13 +5,17 @@
     <title>Sum of two Numbers</title>
     <script src="libs/underscore-min.js"></script>       
 </head>
-<body>
-	<h3>Sum of two Numbers: {{ firstNumber + secondNumber }}</h3>
+<body ng-controller = "Sum">
+	<h3>Sum of two Numbers</h3>
 	<p>First Number:
-    	<input type="number" ng-model="firstNumber" />
+    	<input type="number" ng-model="firstNumber" placeholder="enter first number"/>
   	</p>
 	<p>Second Number:
-    	<input type="number" ng-model="secondNumber" />
+    	<input type="number" ng-model="secondNumber" placeholder="enter second number"/>
+  	</p>
+
+	<p>Sum of two Numbers:
+    	<input type="number" ng-model="sumOfTwoNumbers()"/>
   	</p>
   	 
 	<script src="libs/angular.min.js"></script>
