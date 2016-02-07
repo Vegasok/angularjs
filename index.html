@@ -6,19 +6,20 @@
            
 </head>
 <body ng-app = 'app'>
-	<h3>Sum of two Numbers</h3>
-	<p>First Number:
-    	<input type="number" ng-model="firstNumber" placeholder="enter first number"/>
-  	</p>
-	<p>Second Number:
-    	<input type="number" ng-model="secondNumber" placeholder="enter second number"/>
-  	</p>
 
-	<p>Sum of two Numbers:
-    	<input type="text" ng-value="firstNumber + secondNumber" disabled/>
-  	</p>
+	<h3>Sum of two Numbers</h3>
+<p>First Number:
+  <input type="number" ng-model="firstNumber" placeholder="enter first number"/>
+  </p>
+<p>Second Number:
+  <input type="number" ng-model="secondNumber" placeholder="enter second number"/>
+  </p>
+
+<pk-sum  first="firstNumber" second="secondNumber"></pk-sum>
   	
 	<script src="libs/angular.min.js"></script>	
+  <script src="libs/angular-route.min.js"></script> 
 	<script src="app/app.js"></script>
+  <script src="app/directives/appSummarize.js"></script>
 </body>
 </html>
