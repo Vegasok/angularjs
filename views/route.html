@@ -7,3 +7,11 @@
 	</p>
 
 <pk-sum  first="firstNumber" second="secondNumber"></pk-sum>
+
+<div ng-controller="ConvertCurrency">
+	<select ng-model = "rates">
+		<option ng-repeat="(currency, value) in getCurrencies" value="{{value}}">{{currency}}</option>
+	</select>
+
+	 <span>Converter: {{(firstNumber + secondNumber) * rates || ''}}</span>
+</div> 

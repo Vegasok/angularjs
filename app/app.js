@@ -34,3 +34,33 @@
         $scope.changeURL = _.compose(changeURL, createPath);   		
 		
 	});
+
+
+
+	app.service('currency', function($http){
+
+		var url = 'http://api.fixer.io/latest';
+
+		this.http = function(url){
+			return $http({
+				method: 'GET',
+				url: url
+			}).then(function(response){
+				return response.data;
+			}, function(error) {
+				return error;
+			});
+		};
+
+		this.getCurrencies = function(){
+			return this.http(url);
+		}
+	});	
+
+	app.controller('ConvertCurrency', function($scope, currency){
+
+		currency.getCurrencies().then(function(data) {
+ 			$scope.getCurrencies = data.rates;
+		});
+				
+	});
